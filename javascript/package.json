@@ -1,0 +1,12 @@
+{
+  "name": "song",
+  "version": "1.0.0",
+  "description": "A nursary rhyme generator",
+  "main": "song.js",
+  "scripts": {
+      "test": "node test_song.js",
+      "start": "node song.js"
+  },
+  "author": "@sleepyfox",
+  "license": "CC-BY-SA-4.0"
+}
