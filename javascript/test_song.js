@@ -22,7 +22,7 @@ She swallowed the bird to catch the spider,
 She swallowed the spider to catch the fly;
 I don't know why she swallowed a fly - Perhaps she'll die!
 
-There was an old lady that swallowed a dog;
+There was an old lady who swallowed a dog;
 What a hog, to swallow a dog!
 She swallowed the dog to catch the cat,
 She swallowed the cat to catch the bird,
@@ -39,7 +39,7 @@ She swallowed the bird to catch the spider,
 She swallowed the spider to catch the fly;
 I don't know why she swallowed a fly - Perhaps she'll die!
 
-There was an old lady who swallowed a horse...;
+There was an old lady who swallowed a horse...
 ...She's dead, of course!`
 
-assert.equal(SONG, lyrics, "Lyrics are not as expected") 
+assert.equal(SONG, lyrics)
