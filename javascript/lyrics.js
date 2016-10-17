@@ -97,4 +97,8 @@ const verse_7 = () => {
     return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
 }
 
-module.exports = verse(1) + verse(2) + verse(3) + verse(4) + verse(5) + verse(6) + verse(7)
+module.exports = function () {
+    const verses = 7
+    function range(n) { return Array(verses).fill().map((_, i) => i + 1) }
+    return range(7).map(n => verse(n)).join('')
+}()
