@@ -28,44 +28,55 @@ function internal_lines(animals){
     return pairs(animals).map((x) => `She swallowed the ${x[0]} to catch the ${x[1]}`).join(',\n') + ";"
 }
 
+function last(arr, how_many) {
+    if (arr === [] || how_many < 1) { return []}
+    if (how_many > arr.length) { return arr }
+    return 
+}
+
 const ANIMALS = ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly']
 
+const Animals = {
+    ANIMALS: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
+    last: (how_many) => ANIMALS.slice(ANIMALS.length - how_many, ANIMALS.length)
+}
+
 const verse_1 = () => {
-    let my_animals = ANIMALS.slice(ANIMALS.length - 1, ANIMALS.length)
+    let my_animals = Animals.last(1)
     return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
 }
 
 const verse_2 = () => {
     let second_line = "That wriggled and wiggled and tickled inside her."
-    let my_animals = ANIMALS.slice(ANIMALS.length - 2, ANIMALS.length)
+    let my_animals = Animals.last(2)
     let core_line = internal_lines(my_animals)
     return [opening_line(my_animals[0]), second_line, core_line, closing_line(), LINE].join(LINE) 
 }
 
 const verse_3 = () => {
     let second_line = "How absurd to swallow a bird."
-    let my_animals = ANIMALS.slice(ANIMALS.length - 3, ANIMALS.length)
+    let my_animals = Animals.last(3)
     let core_lines = internal_lines(my_animals)
     return [opening_line('bird'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_4 = () => {
     let second_line = "Fancy that to swallow a cat!"
-    let my_animals = ANIMALS.slice(ANIMALS.length - 4, ANIMALS.length)
+    let my_animals = Animals.last(4)
     let core_lines = internal_lines(my_animals)
     return [opening_line('cat'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_5 = () => {
     let second_line = "What a hog, to swallow a dog!"
-    let my_animals = ANIMALS.slice(ANIMALS.length - 5, ANIMALS.length)
+    let my_animals = Animals.last(5)
     let core_lines = internal_lines(my_animals)
     return [opening_line('dog'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_6 = () => {
     let second_line = "I don't know how she swallowed a cow!"
-    let my_animals = ANIMALS.slice(ANIMALS.length - 6, ANIMALS.length)
+    let my_animals = Animals.last(6)
     let core_lines = internal_lines(my_animals)
     return [opening_line('cow'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
