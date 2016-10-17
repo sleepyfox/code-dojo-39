@@ -44,31 +44,19 @@ function internal_lines(animals){
 
 function verse(n) {
     const NUM_VERSES = 7
-    function delegate(n) {
-	let my_animals = Animals.last(n)
-	let first_animal = my_animals[FIRST]
-	let second_line = first_animal.exclamation
-	let core_lines = internal_lines(my_animals)
-	if (n === 1) {
-	    let opening = opening_line(first_animal.name, 'first')
-	    return [opening, closing_line(), LINE].join(LINE)
-	} else if (n === NUM_VERSES) {
-	    let opening = opening_line(first_animal.name, 'last')
-	    return [opening, closing_line(true)].join(LINE)
-	} else {
-	    let opening = opening_line(first_animal.name)
-	    return [opening, second_line, core_lines, closing_line(), LINE].join(LINE)
-	}
-    }
-    
-    switch (n) {
-    case 1: return delegate(1)
-    case 2: return delegate(2)
-    case 3: return delegate(3)
-    case 4: return delegate(4)
-    case 5: return delegate(5)
-    case 6: return delegate(6)
-    default: return delegate(7)
+    let my_animals = Animals.last(n)
+    let first_animal = my_animals[FIRST]
+    let second_line = first_animal.exclamation
+    let core_lines = internal_lines(my_animals)
+    if (n === 1) {
+	let opening = opening_line(first_animal.name, 'first')
+	return [opening, closing_line(), LINE].join(LINE)
+    } else if (n === NUM_VERSES) {
+	let opening = opening_line(first_animal.name, 'last')
+	return [opening, closing_line(true)].join(LINE)
+    } else {
+	let opening = opening_line(first_animal.name)
+	return [opening, second_line, core_lines, closing_line(), LINE].join(LINE)
     }
 }
 
