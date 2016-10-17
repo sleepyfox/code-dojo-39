@@ -44,24 +44,19 @@ function verse(n) {
 	let my_animals = Animals.last(n)
 	let first_animal = my_animals[FIRST]
 	let opening = (n === 1) ? opening_line(first_animal, 'first') : opening_line(first_animal)
-	let second_line = "That wriggled and wiggled and tickled inside her."
+	let second_line = (n === 2) ? "That wriggled and wiggled and tickled inside her." : "How absurd to swallow a bird."
 	let core_lines = internal_lines(my_animals)
-	if (n === 2) {
-	    return [opening_line(my_animals[0]), second_line, core_lines, closing_line(), LINE].join(LINE)
-	} else {
+	if (n === 1) {
 	    return [opening, closing_line(), LINE].join(LINE)
+	} else {
+	    return [opening, second_line, core_lines, closing_line(), LINE].join(LINE)
 	}
     }
     
     switch (n) {
     case 1: return delegate(1)
     case 2: return delegate(2)
-    case 3: {
-	let second_line = "How absurd to swallow a bird."
-	let my_animals = Animals.last(3)
-	let core_lines = internal_lines(my_animals)
-	return [opening_line('bird'), second_line, core_lines, closing_line(), LINE].join(LINE)
-    }
+    case 3: return delegate(3)
     case 4: {
 	let second_line = "Fancy that to swallow a cat!"
 	let my_animals = Animals.last(4)
