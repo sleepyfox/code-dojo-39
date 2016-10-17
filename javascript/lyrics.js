@@ -1,6 +1,7 @@
 pairs = require('./pairs')
 const LINE = '\n'
 const FIRST = 0
+const SECOND = 1
 
 const Animals = {
     animals: [ { name: 'horse', exclamation: '' },
@@ -10,10 +11,13 @@ const Animals = {
 	       { name: 'bird', exclamation: 'How absurd to swallow a bird.' },
 	       { name: 'spider', exclamation: 'That wriggled and wiggled and tickled inside her.' },
 	       { name: 'fly', exclamation: null } ],
+    num_verses: function(){ return this.animals.length },
     last: function(n) {
 	return this.animals.slice(this.animals.length - n, this.animals.length )
     }
 }
+
+console.log(Animals.num_verses())
 
 function opening_line(animal, verse = 'middle'){
     var ending = { first: '.', middle: ';', last: '...' }
@@ -29,11 +33,10 @@ function closing_line(last_line = false){
 }
 
 function internal_lines(animals){
-    return pairs(animals).map((x) => `She swallowed the ${x[0].name} to catch the ${x[1].name}`).join(',\n') + ";"
+    return pairs(animals).map((pair) => `She swallowed the ${ pair[FIRST].name } to catch the ${ pair[SECOND].name }`).join(',\n') + ";"
 }
 
 function verse(n) {
-    const NUM_VERSES = 7
     let my_animals = Animals.last(n)
     let first_animal = my_animals[FIRST]
     let second_line = first_animal.exclamation
@@ -41,7 +44,7 @@ function verse(n) {
     if (n === 1) {
 	let opening = opening_line(first_animal.name, 'first')
 	return [opening, closing_line(), LINE].join(LINE)
-    } else if (n === NUM_VERSES) {
+    } else if (n === Animals.num_verses()) {
 	let opening = opening_line(first_animal.name, 'last')
 	return [opening, closing_line(true)].join(LINE)
     } else {
@@ -51,7 +54,6 @@ function verse(n) {
 }
 
 module.exports = function () {
-    const verses = 7
-    function range(n) { return Array(verses).fill().map((_, i) => i + 1) }
-    return range(7).map(n => verse(n)).join('')
+    function range(n) { return Array(n).fill().map((_, i) => i + 1) }
+    return range(Animals.num_verses()).map(n => verse(n)).join('')
 }()
