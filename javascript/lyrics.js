@@ -41,6 +41,18 @@ const Animals = {
     last: (how_many) => ANIMALS.slice(ANIMALS.length - how_many, ANIMALS.length)
 }
 
+function verse(n) {
+    switch (n) {
+    case 1: return verse_1()
+    case 2: return verse_2()
+    case 3: return verse_3()
+    case 4: return verse_4()
+    case 5: return verse_5()
+    case 6: return verse_6()
+    default: return verse_7()
+    }
+}
+
 const verse_1 = () => {
     let my_animals = Animals.last(1)
     return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
@@ -85,4 +97,4 @@ const verse_7 = () => {
     return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
 }
 
-module.exports = verse_1() + verse_2() + verse_3() + verse_4() + verse_5() + verse_6() + verse_7()
+module.exports = verse(1) + verse(2) + verse(3) + verse(4) + verse(5) + verse(6) + verse(7)
