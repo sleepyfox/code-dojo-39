@@ -26,10 +26,6 @@ function opening_line(animal, verse = 'middle'){
     return `There was an old lady who swallowed a ${ animal }${ ending[verse] }`
 }
 
-function closing_line(){
-    return "I don't know why she swallowed a fly - perhaps she'll die!"
-}
-
 function internal_lines(animals){
     return pairs(animals).map((pair) => `She swallowed the ${ pair[FIRST].name } to catch the ${ pair[SECOND].name }`).join(',\n') + ";"
 }
@@ -38,6 +34,7 @@ function verse(n) {
     let my_animals = Animals.last(n)
     let first_animal = my_animals[FIRST]
 
+    let closing_line = "I don't know why she swallowed a fly - perhaps she'll die!"
     let core_lines = internal_lines(my_animals)
 
     if (n === 1) {
@@ -48,7 +45,7 @@ function verse(n) {
 	return [opening, first_animal.exclamation].join(LINE)
     } else {
 	let opening = opening_line(first_animal.name)
-	return [opening, first_animal.exclamation, core_lines, closing_line(), LINE].join(LINE)
+	return [opening, first_animal.exclamation, core_lines, closing_line, LINE].join(LINE)
     }
 }
 
