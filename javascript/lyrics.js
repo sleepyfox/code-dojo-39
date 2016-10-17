@@ -16,8 +16,8 @@ function opening_line(animal, verse = 'middle'){
     return `There was an old lady who swallowed a ${animal}${ending}`
 }
 
-function closing_line(options){
-    if (options && options.last){ 
+function closing_line(last_line = false){
+    if (last_line){ 
 	return "...She's dead, of course!"
     } else {
 	return "I don't know why she swallowed a fly - perhaps she'll die!"
@@ -65,7 +65,7 @@ const verse_6 = () => {
 }
 
 const verse_7 = () => {
-    return [opening_line('horse', 'last'), closing_line({last: true})].join(LINE)
+    return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
 }
 
 module.exports = verse_1() + verse_2() + verse_3() + verse_4() + verse_5() + verse_6() + verse_7()
