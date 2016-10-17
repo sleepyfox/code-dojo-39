@@ -4,9 +4,9 @@ const FIRST = 0
 
 const Animals = {
     animals: [ { name: 'horse', exclamation: '' },
-	       { name: 'cow', exclamation: '' },
-	       { name: 'dog', exclamation: '' },
-	       { name: 'cat', exclamation: '' },
+	       { name: 'cow', exclamation: 'I don\'t know how she swallowed a cow!' },
+	       { name: 'dog', exclamation: 'What a hog, to swallow a dog!' },
+	       { name: 'cat', exclamation: 'Fancy that to swallow a cat!' },
 	       { name: 'bird', exclamation: 'How absurd to swallow a bird.' },
 	       { name: 'spider', exclamation: 'That wriggled and wiggled and tickled inside her.' },
 	       { name: 'fly', exclamation: null } ],
@@ -43,15 +43,20 @@ function internal_lines(animals){
 }
 
 function verse(n) {
+    const NUM_VERSES = 7
     function delegate(n) {
 	let my_animals = Animals.last(n)
 	let first_animal = my_animals[FIRST]
-	let opening = opening_line(first_animal.name, (n == 1) ? 'first' : '')
 	let second_line = first_animal.exclamation
 	let core_lines = internal_lines(my_animals)
 	if (n === 1) {
+	    let opening = opening_line(first_animal.name, 'first')
 	    return [opening, closing_line(), LINE].join(LINE)
+	} else if (n === NUM_VERSES) {
+	    let opening = opening_line(first_animal.name, 'last')
+	    return [opening, closing_line(true)].join(LINE)
 	} else {
+	    let opening = opening_line(first_animal.name)
 	    return [opening, second_line, core_lines, closing_line(), LINE].join(LINE)
 	}
     }
@@ -60,27 +65,10 @@ function verse(n) {
     case 1: return delegate(1)
     case 2: return delegate(2)
     case 3: return delegate(3)
-    case 4: {
-	let second_line = "Fancy that to swallow a cat!"
-	let my_animals = Animals.last(4)
-	let core_lines = internal_lines(my_animals)
-	return [opening_line('cat'), second_line, core_lines, closing_line(), LINE].join(LINE)
-    }
-    case 5: {
-	let second_line = "What a hog, to swallow a dog!"
-	let my_animals = Animals.last(5)
-	let core_lines = internal_lines(my_animals)
-	return [opening_line('dog'), second_line, core_lines, closing_line(), LINE].join(LINE)
-    }
-    case 6: {
-	let second_line = "I don't know how she swallowed a cow!"
-	let my_animals = Animals.last(6)
-	let core_lines = internal_lines(my_animals)
-	return [opening_line('cow'), second_line, core_lines, closing_line(), LINE].join(LINE)
-    }
-    default: {
-	return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
-    }
+    case 4: return delegate(4)
+    case 5: return delegate(5)
+    case 6: return delegate(6)
+    default: return delegate(7)
     }
 }
 
