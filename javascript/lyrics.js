@@ -43,58 +43,44 @@ const Animals = {
 
 function verse(n) {
     switch (n) {
-    case 1: return verse_1()
-    case 2: return verse_2()
-    case 3: return verse_3()
-    case 4: return verse_4()
-    case 5: return verse_5()
-    case 6: return verse_6()
-    default: return verse_7()
+    case 1: {
+	let my_animals = Animals.last(1)
+	return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
     }
-}
-
-const verse_1 = () => {
-    let my_animals = Animals.last(1)
-    return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
-}
-
-const verse_2 = () => {
-    let second_line = "That wriggled and wiggled and tickled inside her."
-    let my_animals = Animals.last(2)
-    let core_line = internal_lines(my_animals)
-    return [opening_line(my_animals[0]), second_line, core_line, closing_line(), LINE].join(LINE) 
-}
-
-const verse_3 = () => {
-    let second_line = "How absurd to swallow a bird."
-    let my_animals = Animals.last(3)
-    let core_lines = internal_lines(my_animals)
-    return [opening_line('bird'), second_line, core_lines, closing_line(), LINE].join(LINE)
-}
-
-const verse_4 = () => {
-    let second_line = "Fancy that to swallow a cat!"
-    let my_animals = Animals.last(4)
-    let core_lines = internal_lines(my_animals)
-    return [opening_line('cat'), second_line, core_lines, closing_line(), LINE].join(LINE)
-}
-
-const verse_5 = () => {
-    let second_line = "What a hog, to swallow a dog!"
-    let my_animals = Animals.last(5)
-    let core_lines = internal_lines(my_animals)
-    return [opening_line('dog'), second_line, core_lines, closing_line(), LINE].join(LINE)
-}
-
-const verse_6 = () => {
-    let second_line = "I don't know how she swallowed a cow!"
-    let my_animals = Animals.last(6)
-    let core_lines = internal_lines(my_animals)
-    return [opening_line('cow'), second_line, core_lines, closing_line(), LINE].join(LINE)
-}
-
-const verse_7 = () => {
-    return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
+    case 2: {
+	let second_line = "That wriggled and wiggled and tickled inside her."
+	let my_animals = Animals.last(2)
+	let core_line = internal_lines(my_animals)
+	return [opening_line(my_animals[0]), second_line, core_line, closing_line(), LINE].join(LINE) 
+    }
+    case 3: {
+	let second_line = "How absurd to swallow a bird."
+	let my_animals = Animals.last(3)
+	let core_lines = internal_lines(my_animals)
+	return [opening_line('bird'), second_line, core_lines, closing_line(), LINE].join(LINE)
+    }
+    case 4: {
+	let second_line = "Fancy that to swallow a cat!"
+	let my_animals = Animals.last(4)
+	let core_lines = internal_lines(my_animals)
+	return [opening_line('cat'), second_line, core_lines, closing_line(), LINE].join(LINE)
+    }
+    case 5: {
+	let second_line = "What a hog, to swallow a dog!"
+	let my_animals = Animals.last(5)
+	let core_lines = internal_lines(my_animals)
+	return [opening_line('dog'), second_line, core_lines, closing_line(), LINE].join(LINE)
+    }
+    case 6: {
+	let second_line = "I don't know how she swallowed a cow!"
+	let my_animals = Animals.last(6)
+	let core_lines = internal_lines(my_animals)
+	return [opening_line('cow'), second_line, core_lines, closing_line(), LINE].join(LINE)
+    }
+    default: {
+	return [opening_line('horse', 'last'), closing_line(true)].join(LINE)
+    }
+    }
 }
 
 module.exports = function () {
