@@ -31,41 +31,41 @@ function internal_lines(animals){
 const ANIMALS = ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly']
 
 const verse_1 = () => {
-    let my_animals = ANIMALS.slice(6)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 1, ANIMALS.length)
     return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
 }
 
 const verse_2 = () => {
     let second_line = "That wriggled and wiggled and tickled inside her."
-    let my_animals = ANIMALS.slice(5)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 2, ANIMALS.length)
     let core_line = internal_lines(my_animals)
     return [opening_line(my_animals[0]), second_line, core_line, closing_line(), LINE].join(LINE) 
 }
 
 const verse_3 = () => {
     let second_line = "How absurd to swallow a bird."
-    let my_animals = ANIMALS.slice(4)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 3, ANIMALS.length)
     let core_lines = internal_lines(my_animals)
     return [opening_line('bird'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_4 = () => {
     let second_line = "Fancy that to swallow a cat!"
-    let my_animals = ANIMALS.slice(3)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 4, ANIMALS.length)
     let core_lines = internal_lines(my_animals)
     return [opening_line('cat'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_5 = () => {
     let second_line = "What a hog, to swallow a dog!"
-    let my_animals = ANIMALS.slice(2)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 5, ANIMALS.length)
     let core_lines = internal_lines(my_animals)
     return [opening_line('dog'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
 
 const verse_6 = () => {
     let second_line = "I don't know how she swallowed a cow!"
-    let my_animals = ANIMALS.slice(1)
+    let my_animals = ANIMALS.slice(ANIMALS.length - 6, ANIMALS.length)
     let core_lines = internal_lines(my_animals)
     return [opening_line('cow'), second_line, core_lines, closing_line(), LINE].join(LINE)
 }
