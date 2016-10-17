@@ -34,11 +34,6 @@ function internal_lines(animals){
     return pairs(animals).map((x) => `She swallowed the ${x[0]} to catch the ${x[1]}`).join(',\n') + ";"
 }
 
-function last(arr, how_many) {
-    if (arr === [] || how_many < 1) { return []}
-    if (how_many > arr.length) { return arr }
-    return 
-}
 function verse(n) {
     function delegate(n) {
 	let my_animals = Animals.last(n)
