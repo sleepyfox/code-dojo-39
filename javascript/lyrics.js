@@ -3,8 +3,18 @@ const LINE = '\n'
 const FIRST = 0
 
 const Animals = {
-    animals: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
-    last: function(n) { return this.animals.slice(this.animals.length - n, this.animals.length )}
+    animals: [ { name: 'horse' },
+	       { name: 'cow' },
+	       { name: 'dog' },
+	       { name: 'cat' },
+	       { name: 'bird' },
+	       { name: 'spider' },
+	       { name: 'fly' } ],
+    last: function(n) {
+	return this.animals
+	    .map(x => x.name)
+	    .slice(this.animals.length - n, this.animals.length )
+    }
 }
 
 function opening_line(animal, verse = 'middle'){
