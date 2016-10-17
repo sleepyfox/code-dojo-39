@@ -1,5 +1,11 @@
 pairs = require('./pairs')
 const LINE = '\n'
+const FIRST = 0
+
+const Animals = {
+    animals: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
+    last: function(n) { return this.animals.slice(this.animals.length - n, this.animals.length )}
+}
 
 function opening_line(animal, verse = 'middle'){
     var ending = ''
@@ -33,27 +39,23 @@ function last(arr, how_many) {
     if (how_many > arr.length) { return arr }
     return 
 }
-
-const Animals = {
-    animals: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
-    last: function(n) { return this.animals.slice(this.animals.length - n, this.animals.length )}
-}
-
 function verse(n) {
     function delegate(n) {
-	let my_animals = Animals.last(1)
-	let opening = (n === 1) ? opening_line(my_animals[0], 'first') : opening_line(my_animals[0])
-	return [opening, closing_line(), LINE].join(LINE)
+	let my_animals = Animals.last(n)
+	let first_animal = my_animals[FIRST]
+	let opening = (n === 1) ? opening_line(first_animal, 'first') : opening_line(first_animal)
+	let second_line = "That wriggled and wiggled and tickled inside her."
+	let core_lines = internal_lines(my_animals)
+	if (n === 2) {
+	    return [opening_line(my_animals[0]), second_line, core_lines, closing_line(), LINE].join(LINE)
+	} else {
+	    return [opening, closing_line(), LINE].join(LINE)
+	}
     }
     
     switch (n) {
     case 1: return delegate(1)
-    case 2: {
-	let second_line = "That wriggled and wiggled and tickled inside her."
-	let my_animals = Animals.last(2)
-	let core_line = internal_lines(my_animals)
-	return [opening_line(my_animals[0]), second_line, core_line, closing_line(), LINE].join(LINE) 
-    }
+    case 2: return delegate(2)
     case 3: {
 	let second_line = "How absurd to swallow a bird."
 	let my_animals = Animals.last(3)
