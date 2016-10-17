@@ -16,18 +16,8 @@ const Animals = {
 }
 
 function opening_line(animal, verse = 'middle'){
-    var ending = ''
-    switch (verse) {
-    case 'first':
-	ending = '.'
-	break
-    case 'last':
-	ending = '...'
-	break
-    default:
-	ending = ';'
-    } 
-    return `There was an old lady who swallowed a ${animal}${ending}`
+    var ending = { first: '.', middle: ';', last: '...' }
+    return `There was an old lady who swallowed a ${ animal }${ ending[verse] }`
 }
 
 function closing_line(last_line = false){
