@@ -34,19 +34,20 @@ function last(arr, how_many) {
     return 
 }
 
-const ANIMALS = ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly']
-
 const Animals = {
-    ANIMALS: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
-    last: (how_many) => ANIMALS.slice(ANIMALS.length - how_many, ANIMALS.length)
+    animals: ['horse', 'cow', 'dog', 'cat', 'bird', 'spider', 'fly'],
+    last: function(n) { return this.animals.slice(this.animals.length - n, this.animals.length )}
 }
 
 function verse(n) {
-    switch (n) {
-    case 1: {
+    function delegate(n) {
 	let my_animals = Animals.last(1)
-	return [opening_line(my_animals[0], 'first'), closing_line(), LINE].join(LINE)
+	let opening = (n === 1) ? opening_line(my_animals[0], 'first') : opening_line(my_animals[0])
+	return [opening, closing_line(), LINE].join(LINE)
     }
+    
+    switch (n) {
+    case 1: return delegate(1)
     case 2: {
 	let second_line = "That wriggled and wiggled and tickled inside her."
 	let my_animals = Animals.last(2)
