@@ -3,17 +3,15 @@ const LINE = '\n'
 const FIRST = 0
 
 const Animals = {
-    animals: [ { name: 'horse' },
-	       { name: 'cow' },
-	       { name: 'dog' },
-	       { name: 'cat' },
-	       { name: 'bird' },
-	       { name: 'spider' },
-	       { name: 'fly' } ],
+    animals: [ { name: 'horse', exclamation: '' },
+	       { name: 'cow', exclamation: '' },
+	       { name: 'dog', exclamation: '' },
+	       { name: 'cat', exclamation: '' },
+	       { name: 'bird', exclamation: 'How absurd to swallow a bird.' },
+	       { name: 'spider', exclamation: 'That wriggled and wiggled and tickled inside her.' },
+	       { name: 'fly', exclamation: null } ],
     last: function(n) {
-	return this.animals
-	    .map(x => x.name)
-	    .slice(this.animals.length - n, this.animals.length )
+	return this.animals.slice(this.animals.length - n, this.animals.length )
     }
 }
 
@@ -41,15 +39,15 @@ function closing_line(last_line = false){
 }
 
 function internal_lines(animals){
-    return pairs(animals).map((x) => `She swallowed the ${x[0]} to catch the ${x[1]}`).join(',\n') + ";"
+    return pairs(animals).map((x) => `She swallowed the ${x[0].name} to catch the ${x[1].name}`).join(',\n') + ";"
 }
 
 function verse(n) {
     function delegate(n) {
 	let my_animals = Animals.last(n)
 	let first_animal = my_animals[FIRST]
-	let opening = (n === 1) ? opening_line(first_animal, 'first') : opening_line(first_animal)
-	let second_line = (n === 2) ? "That wriggled and wiggled and tickled inside her." : "How absurd to swallow a bird."
+	let opening = opening_line(first_animal.name, (n == 1) ? 'first' : '')
+	let second_line = first_animal.exclamation
 	let core_lines = internal_lines(my_animals)
 	if (n === 1) {
 	    return [opening, closing_line(), LINE].join(LINE)
