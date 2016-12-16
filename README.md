@@ -8,9 +8,13 @@ Similarly a [Ruby](https://www.ruby-lang.org/en/) version can be found in the [r
 
 	ruby song.rb
 
-and a [Python](https://www.python.org/) version in the [python](python) folder; produce the song with:
+A [Python](https://www.python.org/) version can be found in the [python](python) folder; produce the song with:
 
 	python song.py
+
+A [Java](https://www.java.com/) version can be found in the [java](java) folder; produce the song with:
+
+	javac Song.java && java Song
 
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
