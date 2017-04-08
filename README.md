@@ -19,7 +19,13 @@ A [Java](https://www.java.com/) version can be found in the [java](java) folder;
 A [PHP](https://php.net/) version can be found in the [PHP](PHP) folder; produce the song with:
 
 	php song.php
-	
+
+A .NET Core version implementation of the kata in the `csharp\dotnetcore` folder; produce the song with:
+
+```bash
+cd song
+dotnet run
+```	
 
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
