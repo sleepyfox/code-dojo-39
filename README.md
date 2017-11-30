@@ -27,6 +27,11 @@ cd song
 dotnet run
 ```	
 
+A [Go](https://golang.org/) version can be found in the [golang](golang) folder; produce the song with:
+
+	go run main.go
+
+
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
 ## Objective
