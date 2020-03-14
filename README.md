@@ -16,6 +16,11 @@ A [Java](https://www.java.com/) version can be found in the [java](java) folder;
 
 	javac Song.java && java Song
 	
+A [Kotlin](https://kotlinlang.org/) version can be found in the [kotlin](kotlin) folder; produce the song with:
+
+	 kotlinc Song.kt -include-runtime -d Song.jar 
+	 java -jar Song.jar
+
 A [PHP](https://php.net/) version can be found in the [PHP](PHP) folder; produce the song with:
 
 	php song.php
