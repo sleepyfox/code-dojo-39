@@ -31,6 +31,9 @@ A [Go](https://golang.org/) version can be found in the [golang](golang) folder;
 
 	go run main.go
 
+A [Typescript](https://www.typescriptlang.org/) version can be found in the [typescript](typescript) folder; produce the song with:
+
+	ts-node song.ts
 
 You can find out more about the London Code Dojo at our [homepage](http://www.meetup.com/London-Code-Dojo/).
 
