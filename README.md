@@ -15,6 +15,6 @@ The functionality is in the file `src/song.ts`. Check the `package.json` for pre
 
 - create branch called by your name and then push your progress there
 - add tests to cover the current functionality
-- refactor the code in `src/song.ts` to match the objective
+- refactor the code in `src/song.ts` to match the objective and be awesome
 
 You have [one hour](https://vclock.com/set-timer-for-1-hour/), good luck! ⏱
