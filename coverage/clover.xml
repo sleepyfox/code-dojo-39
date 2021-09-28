@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1632867066656" clover="3.2.0">
+  <project timestamp="1632867066656" name="All files">
+    <metrics statements="30" coveredstatements="30" conditionals="8" coveredconditionals="8" methods="13" coveredmethods="13" elements="51" coveredelements="51" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
+    <file name="song.ts" path="/media/veracrypt1/FeedYou/refactoring-kata-song/src/song.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+    </file>
+    <file name="songService.ts" path="/media/veracrypt1/FeedYou/refactoring-kata-song/src/songService.ts">
+      <metrics statements="27" coveredstatements="27" conditionals="8" coveredconditionals="8" methods="12" coveredmethods="12"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
+      <line num="52" count="1" type="stmt"/>
+      <line num="53" count="2" type="stmt"/>
+      <line num="59" count="12" type="stmt"/>
+      <line num="65" count="50" type="cond" truecount="2" falsecount="0"/>
+      <line num="67" count="30" type="stmt"/>
+      <line num="69" count="30" type="stmt"/>
+      <line num="74" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="76" count="14" type="stmt"/>
+      <line num="78" count="14" type="stmt"/>
+      <line num="82" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="83" count="10" type="stmt"/>
+      <line num="86" count="4" type="stmt"/>
+      <line num="90" count="30" type="cond" truecount="2" falsecount="0"/>
+      <line num="91" count="20" type="stmt"/>
+      <line num="94" count="10" type="stmt"/>
+    </file>
+  </project>
+</coverage>
